@@ -11,14 +11,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.post.build
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.save
+    @post = current_user.post.new(post_params)
+    if @post.save
+      redirect_to @post
+    else
+      render 'new'
+    end
 
-    redirect_to post_path(@post)
   end
 
   def destroy
