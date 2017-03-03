@@ -1,0 +1,15 @@
+<h3>Write a comment</h3>
+<%= form_for [@post, @comment] do |f| %>
+  <p>
+    <%= f.label :author_name %> <br>
+    <%= f.text_field :author_name %>
+  </p>
+
+  <p>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit 'Submit'%>
+  </p>
+  <% end %>
