@@ -1,15 +1,24 @@
-<h1>Blog</h1>
-
-<ul>
+ <div class="container">
   <% @posts.each do |post| %>
-
-  <li>
-   <h2> <%=link_to post.title, post_path(post), class: 'post_title', id: "post_#{post.id}" %></h2>
-   <p> <%= post.body %> </p>
-  </li>
+  <div class="well">
+        <div class="media-body">
+          <h3 class="media-heading">
+            <%=link_to post.title, post_path(post), class: 'post_title', id: "post_#{post.id}" %>
+          </h3>
+          <p class="text-right">
+          </p>
+          <p>
+            <%= post.body %>
+          </p>
+          <button type="button" class="btn btn-info">Read more
+            <% link_to post_path(post) %>
+          </button>
+        </div>
+      </div>
   <% end %>
-</ul>
+  </div>
 
 <% if user_signed_in? %>
 <%= link_to "Create a new post", new_post_path, class: "new_post" %>
 <% end %>
+
