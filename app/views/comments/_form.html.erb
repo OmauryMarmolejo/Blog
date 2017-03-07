@@ -2,11 +2,10 @@
 <%= form_for [@post, @comment] do |f| %>
 
   <p>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, rows: "3", placeholder: "Comment", class: "textarea form-control"%>
   </p>
 
   <p>
-    <%= f.submit 'Submit'%>
+    <%= f.submit 'Submit', class: "btn pull-right"%>
   </p>
   <% end %>
