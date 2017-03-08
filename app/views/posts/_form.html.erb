@@ -1,15 +1,26 @@
-<%= form_for(@post) do |f| %>
-  <p>
-    <%= f.label :title %> <br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :body %> <br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit%>
-  </p>
-  <% end %>
-
+<div class="container">
+  <div class="row">
+  <h3>New post</h3>
+    <%= form_for(@post) do |f|%>
+      <div class="row">
+        <div class="col-md-6">
+         <div class="form-group">
+          <%= f.text_field :title, placeholder: "Title", type: "text", class: "form-control" %>
+         </div>
+        </div>
+      </div>
+  <div class="row">
+   <div class="col-md-12">
+     <div class="form-group">
+      <%= f.text_area :body, rows: "3", placeholder: "Content of the post", class: "textarea form-control"%>
+    </div>
+   </div>
+  </div>
+  <div class="row">
+   <div class="col-md-12">
+    <%= f.submit class: "btn pull-right"%>
+   </div>
+  </div>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,5 @@
- <div class="container">
+<br>
+<div class="container">
   <% @posts.each do |post| %>
   <div class="well">
         <div class="media-body">
@@ -10,15 +11,10 @@
           <p>
             <%= post.body %>
           </p>
-          <button type="button" class="btn btn-info">Read more
-            <% link_to post_path(post) %>
-          </button>
+            <%= link_to "Read more", post_path(post) %>
         </div>
       </div>
   <% end %>
   </div>
 
-<% if user_signed_in? %>
-<%= link_to "Create a new post", new_post_path, class: "new_post" %>
-<% end %>
 

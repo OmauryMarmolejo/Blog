@@ -1,5 +1,40 @@
-<div>
-  <h4><%= @post.user.email %></h4>
-  <p> <%= comment.content %></p>
-  <p>Posted <%= distance_of_time_in_words(comment.post.created_at, comment.created_at) %> later</p>
-</div>
+  <!-- Contenedor Principal -->
+    <div class="comments-container">
+      <ul id="comments-list" class="comments-list">
+        <li>
+          <div class="comment-main-level">
+          <!-- Contenedor del Comentario -->
+            <div class="comment-box">
+              <div class="comment-head">
+                <h5 class="comment-name by-author"><strong><%= comment.user.email %></strong></h5>
+                <i class="fa fa-reply"></i>
+                <i class="fa fa-heart"></i>
+              </div>
+              <div class="comment-content">
+                <p> <%= comment.content %></p>
+                <small>Posted <%= distance_of_time_in_words(comment.post.created_at, comment.created_at) %> ago</small>
+              </div>
+            </div>
+          </div>
+          <!-- Respuestas de los comentarios -->
+      <ul class="comments-list reply-list">
+        <li>
+        <!-- Contenedor del Comentario -->
+        <div class="comment-box">
+          <div class="comment-head">
+            <h5 class="comment-name"><strong>Lorena Rojero</strong></h5>
+
+            <i class="fa fa-reply"></i>
+            <i class="fa fa-heart"></i>
+          </div>
+          <div class="comment-content">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio
+           illo?</p>
+           <small>Posted 4 minutes ago</small>
+          </div>
+         </div>
+        </li>
+      </ul>
+        </li>
+      </ul>
+    </div>

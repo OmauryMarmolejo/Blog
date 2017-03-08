@@ -13,20 +13,19 @@
 <div class="menu">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#"><h1>Blog</h1></a>
+    <%= link_to "Blog in", posts_path, class: "navbar-brand size-brand" %>
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
-
           <% if user_signed_in? %>
-           <strong><%= current_user.email %></strong>
+           <li> <a><%= current_user.email %></li></a>
+           <li> <%= link_to "Create a new post", new_post_path, class: "new_post" %></li>
            <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
            <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
           <% else %>
            <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
            <li> <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> </li>
            <% end %>
-          <p class="flash"><%= flash.notice %> </p>
           <% if notice %>
              <p class="alert alert-success"><%= notice %></p>
           <% end %>
@@ -41,3 +40,4 @@
       <%= yield %>
   </body>
 </html>
+
