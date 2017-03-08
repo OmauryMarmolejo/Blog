@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should validates_presence_of(:email)
+  should allow_value("vmarmolejo@ucol.mx").for(:email)
+  should_not allow_value("@ucol").for(:email)
 end
