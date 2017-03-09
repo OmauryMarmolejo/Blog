@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170308174906) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t. "user"
+    t. "user_id"
     t.integer "{:foreign_key=>true}_id"
     t.index ["{:foreign_key=>true}_id"], name: "index_posts_on_{:foreign_key=>true}_id"
   end
