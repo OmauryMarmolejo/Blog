@@ -41,17 +41,20 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem "factory_girl_rails"
+  gem 'database_cleaner', '~> 1.5'
+  gem 'database_cleaner', '~> 1.5'
 
 end
 
 group :test do
   gem "shoulda-context"
   gem "shoulda-matchers", '>= 3.0.1'
-  gem 'database_cleaner', '~> 1.5'
-  gem 'faker', '~> 1.6.1'
+   gem 'faker', '~> 1.6.1'
+   gem 'capybara'
+  gem 'guard-rspec'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -60,7 +63,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'factory_girl_rails', '~> 4.5.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
