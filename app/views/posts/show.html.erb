@@ -5,15 +5,16 @@
          <strong>By <%= @post.user.email %> </strong> <br>
          <p><%= @post.body %></h1> <br>
         </div>
+        <%= link_to "Back to post list", posts_path %>
       </div>
-  </div>
+     </div>
 
 <div class="container">
   <div class="well">
     <div class="comments-container">
      <h3>Comments (<%= @post.comments.size %>)</h3>
 
-     <%= render partial: 'posts/comment', collection: @post.comments %>
+     <%= render partial: 'posts/comment', collection: @post.comments %> <br>
      <% if user_signed_in? %>
       <%= render partial: 'comments/form' %>
      <% if current_user.id == @post.user_id %>
@@ -27,7 +28,6 @@
       </p>
       <% end %>
       <br>
-      <%= link_to "Back to post list", posts_path %>
     </div>
   </div>
 </div>
