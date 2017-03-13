@@ -4,14 +4,13 @@
   <div class="well">
         <div class="media-body">
           <h3 class="media-heading">
-            <%=link_to post.title, post_path(post), class: 'post_title', id: "post_#{post.id}" %>
+            <%=link_to post.title, post_path(post), class: 'post_title title', id: "post_#{post.id}" %>
           </h3>
           <p class="text-right">
-          </p>
           <p>
-            <%= post.body %>
+            <%= truncate(post.body, :length =>800) %>
           </p>
-            <%= link_to "Read more", post_path(post) %>
+            <%= link_to "Read more", post_path(post), class: "btn btn-info pull-right" %>
         </div>
       </div>
   <% end %>

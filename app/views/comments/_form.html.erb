@@ -2,10 +2,10 @@
 <%= form_for [@post, @comment] do |f| %>
 
   <p>
-    <%= f.text_area :content, rows: "3", placeholder: "Comment", class: "textarea form-control"%>
+    <%= f.text_area :content, rows: "3", placeholder: "Comment", class: "comment_area form-control"%>
   </p>
 
   <p>
-    <%= f.submit 'Submit', class: "btn pull-right"%>
+    <%= f.submit 'Submit', class: "btn btn-success pull-right"%>
   </p>
   <% end %>
