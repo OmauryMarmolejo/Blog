@@ -9,35 +9,42 @@
   </head>
 
   <body>
-
-<div class="menu">
   <div class="container-fluid">
-    <div class="navbar-header">
-    <%= link_to "Blog in", posts_path, class: "navbar-brand size-brand" %>
-    </div>
-    <div>
+    <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "Blog in", posts_path, class: "navbar-brand" %>
+      </div>
       <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-           <li> <a><%= current_user.email %></li></a>
+         <% if user_signed_in? %>
            <li> <%= link_to "Create a new post", new_post_path, class: "new_post" %></li>
+           <li> <a class="user_nav"><%= current_user.email %></a></li>
            <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
            <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
           <% else %>
            <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
            <li> <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> </li>
            <% end %>
-          <% if notice %>
-             <p class="alert alert-success"><%= notice %></p>
-          <% end %>
-          <% if alert %>
-             <p class="alert alert-danger"><%= alert %></p>
-          <% end %>
-       </ul>
-    </div>
+            <% if notice %>
+               <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+               <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
-</div>
 <br>
-      <%= yield %>
+  <%= yield %>
   </body>
 </html>
+
 

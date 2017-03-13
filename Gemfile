@@ -44,18 +44,17 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails"
-  gem 'database_cleaner', '~> 1.5'
-  gem 'database_cleaner', '~> 1.5'
-
+  gem 'database_cleaner'
 end
 
 group :test do
   gem "shoulda-context"
   gem "shoulda-matchers", '>= 3.0.1'
-   gem 'faker', '~> 1.6.1'
-   gem 'capybara'
+  gem 'faker', '~> 1.6.1'
+  gem 'capybara'
   gem 'guard-rspec'
 end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

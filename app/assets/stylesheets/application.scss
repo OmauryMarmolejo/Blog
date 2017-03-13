@@ -5,3 +5,28 @@
 .size-brand{
   font-size: 160%;
 }
+
+.textarea{
+  min-height: 300px;
+  resize:     none;
+}
+
+.user_nav{
+  color: black;
+}
+.user_nav:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.body_text{
+  text-overflow: ellipsis;
+}
+
+.comment_area{
+  resize: none;
+}
+
+.title:hover{
+  text-decoration: none;
+}
