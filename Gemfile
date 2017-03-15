@@ -45,13 +45,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails"
   gem 'database_cleaner'
+  gem "shoulda"
+  gem 'capybara'
+  gem 'faker', '~> 1.6.1'
 end
 
 group :test do
-  gem "shoulda-context"
-  gem "shoulda-matchers", '>= 3.0.1'
-  gem 'faker', '~> 1.6.1'
-  gem 'capybara'
   gem 'guard-rspec'
   gem 'cucumber-rails', :require => false
   gem 'minitest-rails-capybara'

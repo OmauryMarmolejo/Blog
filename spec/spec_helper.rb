@@ -19,6 +19,7 @@
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require File.expand_path("../../config/environment", __FILE__)
+require 'rspec/core'
 require 'capybara/rspec'
 require 'rspec/rails'
 
