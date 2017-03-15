@@ -19,14 +19,17 @@
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require File.expand_path("../../config/environment", __FILE__)
-
+require 'rspec/core'
+require 'capybara/rspec'
 require 'rspec/rails'
 
 Dir[Rails.root.join("spec/support/*.rb")].each { |f| require f  }
 
 RSpec.configure do |config|
-  config.include UserControllerMacros, :type => :controller
+  config.include UserControllerHelper, :type => :controller
   config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include UserHelper, :type => :features
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -49,8 +52,6 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
-
-  config.include DeviseHelper, type: :controller
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards
