@@ -53,6 +53,8 @@ group :test do
   gem 'faker', '~> 1.6.1'
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'cucumber-rails', :require => false
+  gem 'minitest-rails-capybara'
 end
 
 group :development do
