@@ -5,32 +5,28 @@
             <div class="comment-box">
               <div class="comment-head">
                 <h5 class="comment-name by-author"><strong><%= comment.user.email %></strong></h5>
-                <i class="fa fa-reply"></i>
-                <i class="fa fa-heart"></i>
               </div>
               <div class="comment-content">
                 <p> <%= comment.content %></p>
-                <small>Posted <%= distance_of_time_in_words(comment.post.created_at, comment.created_at) %> ago</small>
+                <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+                <% if user_signed_in? %>
+                   <%= form_for [comment, Comment.new] do |f| %>
+                    <%= f.text_area :content, placeholder: "Add a reply" %><br/>
+                    <%= f.submit "Reply" %>
+                    <% end %>
+                <% end %>
               </div>
             </div>
           </div>
       <ul class="comments-list reply-list">
-        <li>
         <div class="comment-box">
-          <div class="comment-head">
-            <h5 class="comment-name"><strong>Lorena Rojero</strong></h5>
-
-            <i class="fa fa-reply"></i>
-            <i class="fa fa-heart"></i>
-          </div>
           <div class="comment-content">
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio
-           illo?</p>
-           <small>Posted 4 minutes ago</small>
+            <%= render(partial: 'comments/comment', collection: comment.comments) %>
           </div>
-         </div>
-        </li>
+        </div>
       </ul>
         </li>
       </ul>
     </div>
+
+

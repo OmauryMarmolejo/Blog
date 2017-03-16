@@ -1,6 +1,5 @@
 <h3>Write a comment</h3>
-<%= form_for [@post, @comment] do |f| %>
-
+<%= form_for [@post, Comment.new] do |f| %>
   <p>
     <%= f.text_area :content, rows: "3", placeholder: "Comment", class: "comment_area form-control"%>
   </p>
@@ -9,3 +8,5 @@
     <%= f.submit 'Submit', class: "btn btn-success pull-right"%>
   </p>
   <% end %>
+
+
