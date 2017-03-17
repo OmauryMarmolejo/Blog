@@ -1,19 +1,18 @@
 <br>
 <div class="container">
   <% @posts.each do |post| %>
-  <div class="well">
-        <div class="media-body">
-          <h3 class="media-heading">
-            <%=link_to post.title, post_path(post), class: 'post_title title', id: "post_#{post.id}" %>
-          </h3>
-          <p class="text-right">
+    <div class="well">
+      <div class="media-body">
+        <h3 class="media-heading">
+          <%=link_to post.title, post_path(post), class: 'post_title title', id: "post_#{post.id}" %>
+        </h3>
           <p>
             <%= truncate(post.body, :length =>800) %>
           </p>
-            <%= link_to "Read more", post_path(post), class: "btn btn-info pull-right" %>
+          <%= link_to "Read more", post_path(post), class: "btn btn-info pull-right" %>
         </div>
       </div>
   <% end %>
-  </div>
+</div>
 
 
