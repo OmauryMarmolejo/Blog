@@ -1,21 +1,21 @@
 <div class="container">
-  <div class="well">
+  <div class="well container-style">
     <div class="media-body">
       <h2> <%= @post.title %> </h2>
-      <strong>By <%= @post.user.email %> </strong> <br>
+      <small><strong>By <%= @post.user.email %></strong></small> <br>
       <p class="content_post"><%= @post.body %></p><br>
     </div>
     <% if current_user%>
       <% if @post.user_id == current_user.id %>
-       <%= link_to "• Edit ", edit_post_path(@post) %>
-        <%= link_to "• Delete", post_path(@post), method: :delete, data: {confirm: "Really delete the post?"}%>
+      <span> <%= link_to "• Edit ", edit_post_path(@post) %></span>
+      <span> <%= link_to " • Delete", post_path(@post), method: :delete, data: {confirm: "Really delete the post?"}%></span>
       <% end %>
     <% end %>
     <%= link_to "Back to post list", posts_path, class: "pull-right" %>
   </div>
 </div>
 <div class="container">
-  <div class="well">
+  <div class="well container-style">
     <div class="comments-container">
       <h3>Global comments (<%= @post.comments.size %>)</h3>
       <ul>

@@ -1,7 +1,7 @@
 <br>
 <div class="container">
   <% @posts.each do |post| %>
-    <div class="well">
+    <div class="well container-style">
       <div class="media-body">
         <h3 class="media-heading">
           <%=link_to post.title, post_path(post), class: 'post_title title', id: "post_#{post.id}" %>
@@ -9,7 +9,7 @@
           <p>
             <%= truncate(post.body, :length =>800) %>
           </p>
-          <%= link_to "Read more", post_path(post), class: "btn btn-info pull-right" %>
+          <%= link_to "Read more", post_path(post), class: "btn btn-secondary btn-outline pull-right" %>
         </div>
       </div>
   <% end %>
