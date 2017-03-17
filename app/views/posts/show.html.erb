@@ -3,7 +3,7 @@
     <div class="media-body">
       <h2> <%= @post.title %> </h2>
       <strong>By <%= @post.user.email %> </strong> <br>
-      <p><%= @post.body %></h1> <br>
+      <p class="content_post"><%= @post.body %></p><br>
     </div>
     <% if current_user%>
       <% if @post.user_id == current_user.id %>
@@ -17,8 +17,10 @@
 <div class="container">
   <div class="well">
     <div class="comments-container">
-      <h3>Comments (<%= @post.comments.size %>)</h3>
-      <%= render partial: 'posts/comment', collection: @post.comments %> <br>
+      <h3>Global comments (<%= @post.comments.size %>)</h3>
+      <ul>
+        <%= render(partial: 'comments/comment', collection: @post.comments)%>
+      </ul>
       <% if user_signed_in? %>
         <%= render partial: 'comments/form' %>
       <% else %>

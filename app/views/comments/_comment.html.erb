@@ -1,20 +1,27 @@
 <li>
-<div class="comment-box">
-              <div class="comment-head">
-                <h5 class="comment-name by-author"><strong><%= comment.user.email %></strong></h5>
-              </div>
-              <div class="comment-content">
-                <p> <%= comment.content %></p>
-                <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
-              </div>
-            </div>
-            <% if user_signed_in? %>
-                <%= form_for [comment, Comment.new] do |f| %>
-                <%= f.text_area :content, placeholder: "Add a reply" %><br/>
-                <%= f.submit "Reply" %>
-              <% end %>
-            <ul>
-              <%= render(partial: 'comments/comment', collection: comment.comments) %>
+  <div class="comment-box">
+    <div class="comment-head">
+      <h5 class="comment-name by-author"><strong><%= comment.user.email %></strong></h5>
+    </div>
+    <div class="comment-content">
+      <p> <%= comment.content %></p>
+      <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <%= form_for [comment, Comment.new] do |f| %>
+      <p>
+        <%= f.text_area :content, rows: "3", placeholder: "Add a reply", class: "comment_area form-control"%>
+      </p>
+      <p>
+        <%= f.submit 'Add reply', class: "btn btn-secondary pull-right"%>
+      </p>
+    <% end %>
+    <ul>
+      <%= render(partial: 'comments/comment', collection: comment.comments) %>
+    </ul>
+  <% end%>
 </li>
-            <% end%>
+
+
 
