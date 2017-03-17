@@ -9,6 +9,12 @@
 .textarea{
   min-height: 300px;
   resize:     none;
+  border-radius: 0;
+}
+
+.input{
+  resize:     none;
+  border-radius: 0;
 }
 
 .user_nav{
@@ -16,7 +22,6 @@
 }
 .user_nav:hover{
   text-decoration: none;
-  color: black;
 }
 
 .body_text{
@@ -25,6 +30,7 @@
 
 .comment_area{
   resize: none;
+  border-radius: 0;
 }
 
 .title:hover{
@@ -33,13 +39,14 @@
 
 .navbar-custom {
   color: black;
-  background-color: #FFFFFF;
-  font-family: 'Lato', sans-serif;
+  background-color: #F5F5F5;
+  border: none;
 }
 
 body{
-  background-color: #FFFFFF;
+  background-color: #F5F5F5;
   text-align: justify;
+  font-family: 'Lato', sans-serif;
 }
 
 .content_post{
@@ -55,3 +62,49 @@ h3{
   font-weight: bold;
   color: black;
   }
+
+  .container-style{
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 0;
+
+  }
+a:link{
+  color: black;
+}
+a:visited{
+  color: black;
+}
+a:hover {
+  color: black;
+}
+a:active {
+  color: black;
+}
+
+navbar-default .navbar-nav > li > a {
+  color: #F5F5F5;
+  border: none;
+}
+
+small{
+  color: #303030;
+}
+.btn-outline{
+  background-color: transparent;
+  color: black;
+  transitin: all .5s;
+  border: black solid 1px;
+  border-radius: 0;
+  transition: all ease-in-out 3s;
+}
+
+.brand{
+  border: solid 2px;
+  color: black;
+}
+
+.btn-outline:hover{
+  text-decoration: underline;
+  transitin: all .2s;
+}
