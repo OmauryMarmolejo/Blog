@@ -7,11 +7,11 @@
     </div>
     <% if current_user%>
       <% if @post.user_id == current_user.id %>
-      <span> <%= link_to "• Edit ", edit_post_path(@post) %></span>
-      <span> <%= link_to " • Delete", post_path(@post), method: :delete, data: {confirm: "Really delete the post?"}%></span>
+      <span> <%= link_to "Edit ", edit_post_path(@post) %></span>
+      <span> <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Really delete the post?"}%></span>
       <% end %>
     <% end %>
-    <%= link_to "Back to post list", posts_path, class: "pull-right" %>
+    <%= link_to "Back to post list", posts_path, class: "pull-right" %><br>
   </div>
 </div>
 <div class="container">
